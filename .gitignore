@@ -1,0 +1,48 @@
+# ── Credentials ──────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Auth session state ────────────────────────
+.auth/
+
+# ── Dependencies ─────────────────────────────
+node_modules/
+
+# ── Playwright output ─────────────────────────
+reports/
+playwright-report/
+test-results/
+blob-report/
+
+# ── TypeScript build output ───────────────────
+dist/
+
+# ── Node/NPM Debug Logs ──────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# ── Test Coverage Output (Optional) ──────────
+coverage/
+.nyc_output/
+
+# ── Claude Code agent config (machine-specific)
+.mcp.json
+.claude/
+.playwright-mcp/
+
+# ── OS noise ─────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+
+# ── Editor noise ─────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo

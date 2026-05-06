@@ -1,0 +1,38 @@
+{
+  "name": "ai-playwright-tests",
+  "version": "1.0.0",
+  "description": "Quick-start guide for setting up and running this framework on a new project. All deep rules and templates live in `CLAUDE.md`, `docs/SCAFFOLD.md`, and `docs/AGENTS.md`. This file tells **you** — the human — when to do what.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test":             "playwright test",
+    "test:headed":      "playwright test --headed",
+    "test:ui":          "playwright test --ui",
+    "test:debug":       "playwright test --debug",
+    "test:smoke":       "playwright test --grep @smoke",
+    "test:regression":  "playwright test --grep @regression",
+    "test:critical":    "playwright test --grep @critical",
+    "test:login":       "playwright test --project=login-tests",
+    "report":           "playwright show-report reports/html",
+    "report:allure":    "allure generate reports/allure-results --clean -o reports/allure-report && allure open reports/allure-report",
+    "lint":             "eslint .",
+    "typecheck":        "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@faker-js/faker":          "^9.0.0",
+    "@playwright/test":         "^1.59.1",
+    "@types/node":              "^25.6.0",
+    "allure-commandline":       "^2.30.0",
+    "allure-playwright":        "^3.0.0",
+    "dotenv":                   "^16.4.0",
+    "eslint":                   "^9.0.0",
+    "eslint-plugin-playwright": "^2.0.0",
+    "typescript":               "^5.5.0"
+  }
+}
