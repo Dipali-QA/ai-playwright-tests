@@ -2,7 +2,7 @@ name: Playwright — Full Regression
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20.x'
           cache: npm
 
       - name: Install dependencies
@@ -40,11 +40,9 @@ jobs:
       - name: Run full regression
         run: npx playwright test --project=chromium
         env:
-          BASE_URL:            ${{ secrets.BASE_URL }}
-          TEST_USER_EMAIL:     ${{ secrets.TEST_USER_EMAIL }}
-          TEST_USER_PASSWORD:  ${{ secrets.TEST_USER_PASSWORD }}
-          ADMIN_USER_EMAIL:    ${{ secrets.ADMIN_USER_EMAIL }}
-          ADMIN_USER_PASSWORD: ${{ secrets.ADMIN_USER_PASSWORD }}
+          BASE_URL: ${{ secrets.BASE_URL }}
+          TEST_USER_USERNAME: ${{ secrets.TEST_USER_USERNAME }}
+          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
           CI: true
 
       - name: Upload HTML report
@@ -57,7 +55,7 @@ jobs:
 
       - name: Generate Allure report
         if: always()
-        run: npx allure generate reports/allure-results --clean -o reports/allure-report
+        run: npm run report:allure
 
       - name: Upload Allure report
         if: always()
