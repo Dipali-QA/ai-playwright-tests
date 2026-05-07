@@ -1,5 +1,5 @@
 // Consolidated: covers specs/login-plan.md (1.1, 1.2, 1.3, 1.4)
-import { test, expect } from '../../fixtures';
+import { test, expect} from '../../fixtures';
 import { testData } from '../../fixtures/testData';
 
 test.describe('Login — Authentication', () => {
